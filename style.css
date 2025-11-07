@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 5% auto;
+}
+
+body {
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(312.5px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 20px;
+}
+
+.gallery .item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Tùy kích thước ô */
+.item.wide {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.item.tall {
+    grid-row: span 2;
+}
+
+.item.text {
+    padding: 80px;
+    grid-column: span 3;
+    text-align: center;
+}
+
+.maintext {
+    font-size: 56px;
+    font-weight: 700;
+}
+
+h3 {
+    color: #3d3737;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #000000;
+}
+
+.modal.close {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        grid-auto-rows: 175px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        grid-auto-rows: 150px;
+    }
+}
+
+@media (max-width: 425px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-auto-rows: 100px;
+    }
+}
