@@ -87,10 +87,13 @@ h3 {
     display: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 990px) {
     .gallery {
         grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
         grid-auto-rows: 175px;
+    }
+    .item.text {
+        padding: 10px;
     }
 }
 
@@ -101,9 +104,27 @@ h3 {
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 590px) {
     .gallery {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         grid-auto-rows: 100px;
+    }
+    .item.text {
+        padding: 0;
+    }
+    .maintext {
+        font-size: 42px;
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 440px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+        grid-auto-rows: 80px;
+    }
+    .maintext {
+        font-size: 36px;
+        font-weight: 600;
     }
 }
