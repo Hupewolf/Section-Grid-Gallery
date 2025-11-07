@@ -23,3 +23,9 @@ modal.addEventListener('click', (e) => {
         modal.style.display = 'none';
     }
 });
+
+modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target.classList.contains('close')) {
+        modal.style.display = 'none';
+    }
+});

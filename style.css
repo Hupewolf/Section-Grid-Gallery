@@ -87,6 +87,17 @@ h3 {
     display: none;
 }
 
+/* nút đóng */
+.modal::after {
+    content: "X";
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
 @media (max-width: 990px) {
     .gallery {
         grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
